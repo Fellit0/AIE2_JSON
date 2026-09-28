@@ -29,6 +29,6 @@ def write_to_file(records, output_file):
         for record in records:
             json_string = json.dumps(record, ensure_ascii=False)
             f.write(json_string + '\n')
-            
-final_records = parse_logs("/home/ergei/AIE2_JSON_Logs_Parser_ID_1578120-1/src/data/logs.json")
+
+final_records = parse_logs("data/logs.json")
 write_to_file(final_records, "results/filtered_logs.json")
