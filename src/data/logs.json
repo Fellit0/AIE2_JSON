@@ -1,0 +1,28 @@
+{"timestamp": "2025-02-18T10:24:25", "prompt": "Hi", "response": "Hello!", "tokens_used": 1500, "latency_ms": 120}
+{"timestamp": "2025-02-18T10:25:55", "prompt": "2+2", "response": "4", "tokens_used": 1200, "latency_ms": 95}
+{"timestamp": "2025-02-18T10:27:12", "prompt": "Capital of France?", "response": "Paris.", "tokens_used": 18, "latency_ms": 150}
+{"timestamp": "2025-02-18T10:28:44", "prompt": "Ping", "tokens_used": 50, "latency_ms": 210, "error": "timeout"}
+{"timestamp": "2025-02-18T10:30:15", "prompt": "Day after Monday?", "response": "Tuesday.", "tokens_used": 2000, "latency_ms": 130}
+{"timestamp": "2025-02-18T10:32:04", "prompt": "Formula for water?", "response": "H2O", "tokens_used": 1400, "latency_ms": 110}
+{"timestamp": "2025-02-18T10:33:40", "prompt": "Stop", "response": "Stopped.", "tokens_used": 10, "latency_ms": 90}
+{"timestamp": "2025-02-18T10:35:12", "prompt": "Status?", "tokens_used": 1201, "latency_ms": 180, "error": "rate_limit_exceeded"}
+{"timestamp": "2025-02-18T10:36:58", "prompt": "Opposite of hot?", "response": "Cold.", "tokens_used": 1600, "latency_ms": 115}
+{"timestamp": "2025-02-18T10:38:20", "prompt": "10 / 2", "response": "5", "tokens_used": 1400, "latency_ms": 98}
+{"timestamp": "2025-02-18T10:40:11", "prompt": "Color of sky?", "response": "Blue.", "tokens_used": 1238, "latency_ms": 140}
+{"timestamp": "2025-02-18T10:41:45", "prompt": "Define AI", "response": "Artificial Intelligence.", "tokens_used": 1125, "latency_ms": 210}
+{"timestamp": "2025-02-18T10:43:22", "prompt": "HTML meaning?", "response": "Hypertext Markup Language.", "tokens_used": 28, "latency_ms": 240}
+{"timestamp": "2025-02-18T10:45:01", "prompt": "Test query", "tokens_used": 1000, "latency_ms": 205, "error": "timeout"}
+{"timestamp": "2025-02-18T10:46:40", "prompt": "Sun is a...", "response": "Star.", "tokens_used": 1512, "latency_ms": 105}
+{"timestamp": "2025-02-18T10:48:15", "prompt": "Speed of sound?", "response": "343 m/s.", "tokens_used": 2222, "latency_ms": 185}
+{"timestamp": "2025-02-18T10:49:50", "prompt": "Year now?", "response": "2026.", "tokens_used": 1243, "latency_ms": 90}
+{"timestamp": "2025-02-18T10:51:12", "prompt": "Reset all", "tokens_used": 7, "latency_ms": 150, "error": "internal_server_error"}
+{"timestamp": "2025-02-18T10:52:45", "prompt": "Are you ready?", "response": "Yes.", "tokens_used": 1511, "latency_ms": 95}
+{"timestamp": "2025-02-18T10:54:20", "prompt": "Bye", "response": "Goodbye!", "tokens_used": 12, "latency_ms": 110}
+{"timestamp": "2025-02-18T10:56:05", "prompt": "Is Python free?", "response": "Yes, open-source.", "tokens_used": 1349, "latency_ms": 112}
+{"timestamp": "2025-02-18T10:57:30", "prompt": "2^3", "response": "8", "tokens_used": 1100, "latency_ms": 85}
+{"timestamp": "2025-02-18T10:59:15", "prompt": "Capital of Italy?", "response": "Rome.", "tokens_used": 16, "latency_ms": 130}
+{"timestamp": "2025-02-18T11:01:10", "prompt": "JSON full form?", "response": "JavaScript Object Notation.", "tokens_used": 2412, "latency_ms": 175}
+{"timestamp": "2025-02-18T11:02:45", "prompt": "What is 5*5?", "response": "25.", "tokens_used": 1423, "latency_ms": 92}
+{"timestamp": "2025-02-18T10:46:40", "prompt": "Satunr is a...", "response": "Planet.", "tokens_used": 1522}
+{"timestamp": "2025-02-18T10:49:50", "prompt": "Next Year ?", "response": "2027.", "latency_ms": 90}
+
