@@ -22,7 +22,7 @@ def parse_logs(file):
             sys.stderr.write("файл пустой")
             sys.exit(1)
     print(cnt_lines, cnt_filter_records, threshold)
-    return data
+    return data, cnt_lines, cnt_filter_records, threshold
 
 def write_to_file(records, output_file):
     with open (output_file, "w", encoding="utf-8")as f:
@@ -30,30 +30,55 @@ def write_to_file(records, output_file):
             json_string = json.dumps(record, ensure_ascii=False)
             f.write(json_string + '\n')
 
-final_records = parse_logs("data/logs.json")
-write_to_file(final_records, "results/filtered_logs.json")
-
 def calculation_metrics(final_records):
     latency_cnt = 0
     total_tokens = 0
     sum_latency_ms = 0
     median_list = []
+    if len(final_records) == 0:
+        return 0, 0, 0
     for record in final_records:
         total_tokens = total_tokens + record['tokens_used']
         if record.get('latency_ms'):
             sum_latency_ms = sum_latency_ms + record['latency_ms']
             latency_cnt += 1
             median_list.append(record['latency_ms'])
-    avg_latency_ms = sum_latency_ms / latency_cnt
-    median_list.sort()  
-    mid = len(median_list) // 2
-    if len(median_list) % 2 == 0:
-        median = sum(median_list[mid-1:mid+1])/ 2
+    if latency_cnt > 0:
+        avg_latency_ms = sum_latency_ms / latency_cnt
+        median_list.sort()  
+        mid = len(median_list) // 2
+        if len(median_list) % 2 == 0:
+            median = sum(median_list[mid-1:mid+1])/ 2
+        else:
+            median = median_list[mid]
     else:
-        median = median_list[mid]
-
+        avg_latency_ms = 0
+        median = 0
     return total_tokens, avg_latency_ms, median
 
-def report_json()
+def report_json(cnt_lines, cnt_filter_records, threshold, total_tokens, avg_latency_ms, latency_metric, file_report):
+    json_file = {
+        "total_entries": cnt_lines,
+        "filtered_entries": cnt_filter_records,
+        "token_threshold": threshold,
+        "total_tokens": total_tokens,
+        "avg_latency_ms": avg_latency_ms,
+        "extra_latency_metric": {"name": "median_latency_ms", "value": latency_metric}
+    }
+    
+    with open(file_report, "w", encoding="utf-8") as f:
+        json.dump(json_file, f, ensure_ascii=False, indent=4)
 
+final_records, cnt_lines, cnt_filter_records, threshold = parse_logs("data/logs.json")
+total_tokens, avg_latency_ms, latency_metric = calculation_metrics(final_records)
+write_to_file(final_records, "results/filtered_logs.json")
+report_json(
+    cnt_lines,
+    cnt_filter_records,
+    threshold,
+    total_tokens,
+    avg_latency_ms,
+    latency_metric,
+    "results/report.json"
+)
 

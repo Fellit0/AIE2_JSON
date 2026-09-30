@@ -1,0 +1,11 @@
+{
+    "total_entries": 27,
+    "filtered_entries": 18,
+    "token_threshold": 1000,
+    "total_tokens": 26958,
+    "avg_latency_ms": 125.70588235294117,
+    "extra_latency_metric": {
+        "name": "median_latency_ms",
+        "value": 112
+    }
+}
