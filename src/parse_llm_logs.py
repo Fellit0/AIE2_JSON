@@ -32,3 +32,28 @@ def write_to_file(records, output_file):
 
 final_records = parse_logs("data/logs.json")
 write_to_file(final_records, "results/filtered_logs.json")
+
+def calculation_metrics(final_records):
+    latency_cnt = 0
+    total_tokens = 0
+    sum_latency_ms = 0
+    median_list = []
+    for record in final_records:
+        total_tokens = total_tokens + record['tokens_used']
+        if record.get('latency_ms'):
+            sum_latency_ms = sum_latency_ms + record['latency_ms']
+            latency_cnt += 1
+            median_list.append(record['latency_ms'])
+    avg_latency_ms = sum_latency_ms / latency_cnt
+    median_list.sort()  
+    mid = len(median_list) // 2
+    if len(median_list) % 2 == 0:
+        median = sum(median_list[mid-1:mid+1])/ 2
+    else:
+        median = median_list[mid]
+
+    return total_tokens, avg_latency_ms, median
+
+def report_json()
+
+
