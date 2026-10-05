@@ -11,8 +11,21 @@ def parse_logs(file):
             try:
                 if (line.strip()):
                     res_dict = json.loads(line)
+                    if not isinstance(res_dict, dict):
+                        sys.stderr.write('Строка не является словарем')
+                        continue
+                    tokens = res_dict.get("tokens_used")
+                    latency = res_dict.get("latency_ms")
+                    if tokens is not None:
+                        if not isinstance(tokens, int):
+                            sys.stderr.write('tokens_used не число')
+                            continue
+                    if latency is not None:
+                        if not isinstance(latency, int):
+                            sys.stderr.write('latency_ms не число')
+                            continue
                     cnt_lines += 1
-                    if res_dict.get('tokens_used') and res_dict['tokens_used'] > 1000:
+                    if tokens and res_dict['tokens_used'] > 1000:
                         data.append(res_dict)
                         cnt_filter_records += 1
             except json.JSONDecodeError:
